@@ -1,0 +1,275 @@
+/******** COLOR PALETTE ***********/
+
+$black-color: #1e1e22;
+$grey-color: #717178;
+$greyBG-color: #efefef;
+$primary-color: #c07f50;
+$secondary-color: #f8f2ed;
+$white-color: #fff;
+$shadow-color: RGBA(113, 113, 120, 0.05);
+
+/******** BREAKPOINTS ***********/
+
+$size__site_content_width: 1024px;
+$media_queries: (
+  "mobile": "only screen and (max-width: 667px)",
+  "tablet":
+    "only screen and (min-width: 668px) and (max-width: $size__site_content_width)",
+  "desktop": "only screen and (min-width: ($size__site_content_width + 1))",
+  "retina2":
+    "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)",
+  "retina3":
+    "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)",
+  "landscape": "screen and (orientation:landscape) ",
+  "portrait": "screen and (orientation:portrait) ",
+);
+
+@mixin for_breakpoint($breakpoints) {
+  $conditions: ();
+  @each $breakpoint in $breakpoints {
+    // If the key exists in the map
+    $conditions: append(
+      $conditions,
+      #{inspect(map-get($media_queries, $breakpoint))},
+      comma
+    );
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
+
+/** use like this:
+
+#className {
+    background: white;
+    border-bottom:1px solid #eee;
+    height: 90px;
+    padding: 0 20px;
+
+    @include for_breakpoint(mobile desktop) {
+        height:70px;
+        position:fixed;
+        width:100%;
+        top:0;
+    }
+}
+
+**/
+
+/******** FONTS  ***********/
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+$main-font: "Jost", sans-serif;
+
+/****** ACTUAL CSS BEGINS ****/
+
+:root {
+  font-size: 16px;
+  font-family: $main-font;
+  font-weight: 400;
+  color: $black-color;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+section {
+  height: 100vh;
+}
+
+aside {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background-color: $white-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*** HEADERS ***/
+
+h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+.entire-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+/**** SIDEBAR ****/
+
+.page-sideBar {
+  box-shadow: 12px 0 15px -4px $shadow-color;
+  ul {
+    list-style-type: none;
+
+    li {
+      padding: 10px 0;
+    }
+  }
+}
+
+/**** SECTIONS ****/
+
+.main-page {
+  float: right;
+  width: 80%;
+}
+
+.section-pad {
+  padding: 90px 0;
+}
+
+.container {
+  padding: 0 60px;
+}
+
+/**** HOME SECTION  ****/
+
+#home {
+  background-color: $greyBG-color;
+}
+
+.about-img {
+  background-color: $grey-color;
+}
+
+/**** ABOUT SECTION  ****/
+
+#about {
+  background-color: $white-color;
+}
+
+.about-img {
+  background-color: $grey-color;
+  width: 350px;
+  height: 450px;
+  margin-left: 8%;
+}
+
+.about-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    padding-right: 60px;
+  }
+}
+
+.about-detail {
+  padding: 10px 0;
+  svg {
+    font-size: 2.5rem;
+    padding: 10px;
+  }
+  img {
+    padding: 10px;
+    vertical-align: -0.125em;
+  }
+}
+
+.button {
+  padding: 15px 20px;
+  background-color: $primary-color;
+  border: none;
+  color: $white-color;
+  letter-spacing: 1px;
+}
+
+/**** WORKS SECTION  ****/
+
+#works {
+  background-color: $secondary-color;
+}
+
+.project {
+  height: 400px;
+  margin: 20px 0;
+}
+
+#store {
+  background-color: red;
+}
+#sunny {
+  background-color: green;
+}
+#countries {
+  background-color: yellow;
+}
+#portfolio {
+  background-color: blue;
+}
+
+/**** CONTACT SECTION  ****/
+
+#contact {
+  background-color: transparent;
+}
+
+.contact-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    padding-right: 20px;
+    font-size: 2rem;
+  }
+}
+
+form {
+  #subject {
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    border: none;
+    border-bottom: solid 1px $primary-color;
+    width: 100%;
+  }
+
+  // input:invalid {
+  //   border: 2px dashed red;
+  // }
+
+  textarea {
+    resize: none;
+    border: none;
+    border-bottom: solid 1px $primary-color;
+    width: 100%;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+}
+
+/**** FOOTER ****/
+
+.footer {
+  background-color: $primary-color;
+  color: $white-color;
+  height: 80px;
+  position: relative;
+  bottom: 0;
+
+  p {
+    padding: 30px 0;
+  }
+}

@@ -1,0 +1,213 @@
+/******** COLOR PALETTE ***********/
+/******** BREAKPOINTS ***********/
+/** use like this:
+
+#className {
+    background: white;
+    border-bottom:1px solid #eee;
+    height: 90px;
+    padding: 0 20px;
+
+    @include for_breakpoint(mobile desktop) {
+        height:70px;
+        position:fixed;
+        width:100%;
+        top:0;
+    }
+}
+
+**/
+/******** FONTS  ***********/
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+/****** ACTUAL CSS BEGINS ****/
+:root {
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  color: #1e1e22;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+section {
+  height: 100vh;
+}
+
+aside {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*** HEADERS ***/
+h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+.entire-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+/**** SIDEBAR ****/
+.page-sideBar {
+  box-shadow: 12px 0 15px -4px RGBA(113, 113, 120, 0.05);
+}
+.page-sideBar ul {
+  list-style-type: none;
+}
+.page-sideBar ul li {
+  padding: 10px 0;
+}
+
+/**** SECTIONS ****/
+.main-page {
+  float: right;
+  width: 80%;
+}
+
+.section-pad {
+  padding: 90px 0;
+}
+
+.container {
+  padding: 0 60px;
+}
+
+/**** HOME SECTION  ****/
+#home {
+  background-color: #efefef;
+}
+
+.about-img {
+  background-color: #717178;
+}
+
+/**** ABOUT SECTION  ****/
+#about {
+  background-color: #fff;
+}
+
+.about-img {
+  background-color: #717178;
+  width: 350px;
+  height: 450px;
+  margin-left: 8%;
+}
+
+.about-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.about-list li {
+  padding-right: 60px;
+}
+
+.about-detail {
+  padding: 10px 0;
+}
+.about-detail svg {
+  font-size: 2.5rem;
+  padding: 10px;
+}
+.about-detail img {
+  padding: 10px;
+  vertical-align: -0.125em;
+}
+
+.button {
+  padding: 15px 20px;
+  background-color: #c07f50;
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/**** WORKS SECTION  ****/
+#works {
+  background-color: #f8f2ed;
+}
+
+.project {
+  height: 400px;
+  margin: 20px 0;
+}
+
+#store {
+  background-color: red;
+}
+
+#sunny {
+  background-color: green;
+}
+
+#countries {
+  background-color: yellow;
+}
+
+#portfolio {
+  background-color: blue;
+}
+
+/**** CONTACT SECTION  ****/
+#contact {
+  background-color: transparent;
+}
+
+.contact-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.contact-list li {
+  padding-right: 20px;
+  font-size: 2rem;
+}
+
+form #subject {
+  width: 100%;
+}
+form input[type=text],
+form input[type=email] {
+  border: none;
+  border-bottom: solid 1px #c07f50;
+  width: 100%;
+}
+form textarea {
+  resize: none;
+  border: none;
+  border-bottom: solid 1px #c07f50;
+  width: 100%;
+}
+form textarea:focus,
+form input:focus {
+  outline: none;
+}
+
+/**** FOOTER ****/
+.footer {
+  background-color: #c07f50;
+  color: #fff;
+  height: 80px;
+  position: relative;
+  bottom: 0;
+}
+.footer p {
+  padding: 30px 0;
+}
+
+/*# sourceMappingURL=App.css.map */
