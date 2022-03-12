@@ -31,20 +31,19 @@
   position: relative;
 }
 
-section {
-  height: 100vh;
+.entire-page {
+  width: 100vw;
 }
 
-aside {
-  position: fixed;
-  width: 20%;
-  height: 100vh;
-  background-color: #fff;
-}
-
+/**** TEXT ****/
 a {
   text-decoration: none;
-  color: inherit;
+  color: #717178;
+}
+
+a:hover {
+  color: #c07f50;
+  text-decoration: none;
 }
 
 /*** HEADERS ***/
@@ -53,26 +52,47 @@ h1 {
   font-size: 2.25rem;
 }
 
-.entire-page {
-  width: 100%;
-  overflow: hidden;
+/**** SIDEBAR ****/
+aside {
+  position: fixed;
+  min-width: 20vw;
+  height: 100vh;
+  background-color: #fff;
 }
 
-/**** SIDEBAR ****/
 .page-sideBar {
   box-shadow: 12px 0 15px -4px RGBA(113, 113, 120, 0.05);
+  padding: 50px 0;
 }
 .page-sideBar ul {
   list-style-type: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 .page-sideBar ul li {
   padding: 10px 0;
 }
 
+.side-nav {
+  margin: 0 auto;
+}
+
+.side-pic {
+  width: 145px;
+  height: 145px;
+  background-color: red;
+  border-radius: 80px;
+  background-image: url("../Images/pic1.jpg");
+  border: solid 8px #f8f2ed;
+  background-size: 280% auto;
+  background-position: -110px -220px;
+}
+
 /**** SECTIONS ****/
 .main-page {
   float: right;
-  width: 80%;
+  width: 80vw;
 }
 
 .section-pad {
@@ -80,28 +100,41 @@ h1 {
 }
 
 .container {
-  padding: 0 60px;
+  padding: 0 4vw;
+  width: 100%;
 }
 
 /**** HOME SECTION  ****/
 #home {
   background-color: #efefef;
+  background-image: url("../Images/homePic.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .about-img {
   background-color: #717178;
+  border: solid 10px #f8f2ed;
 }
 
 /**** ABOUT SECTION  ****/
 #about {
   background-color: #fff;
+  justify-content: center;
 }
 
 .about-img {
   background-color: #717178;
-  width: 350px;
+  width: 375px;
   height: 450px;
-  margin-left: 8%;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-image: url("../Images/pic3.jpg");
+  background-size: 140% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-list {
@@ -138,32 +171,55 @@ h1 {
 /**** WORKS SECTION  ****/
 #works {
   background-color: #f8f2ed;
+  width: 100%;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .project {
-  height: 400px;
+  width: 375px;
   margin: 20px 0;
+  height: 375px;
+  border: solid 1px #c07f50;
+}
+
+.overlay {
+  width: 100%;
+  display: none;
+  height: 100%;
+  background: rgba(192, 127, 80, 0.5);
+  overflow: hidden;
+  z-index: 2;
 }
 
 #store {
-  background-color: red;
+  background-image: url("../Images/store.jpg");
+  background-size: cover;
 }
 
 #sunny {
-  background-color: green;
+  background-image: url("../Images/countries.jpg");
+  background-size: cover;
 }
 
 #countries {
-  background-color: yellow;
+  background-image: url("../Images/portfolio.jpg");
+  background-size: cover;
 }
 
 #portfolio {
-  background-color: blue;
+  background-image: url("../Images/sunny.jpg");
+  background-size: cover;
 }
 
 /**** CONTACT SECTION  ****/
 #contact {
   background-color: transparent;
+  height: 100vh;
 }
 
 .contact-list {

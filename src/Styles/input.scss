@@ -4,9 +4,17 @@ $black-color: #1e1e22;
 $grey-color: #717178;
 $greyBG-color: #efefef;
 $primary-color: #c07f50;
+$primary-overlay: rgba(192, 127, 80, 0.5);
 $secondary-color: #f8f2ed;
 $white-color: #fff;
 $shadow-color: RGBA(113, 113, 120, 0.05);
+$homePic: "../Images/homePic.jpg";
+$displayPic: "../Images/pic3.jpg";
+$sidePic: "../Images/pic1.jpg";
+$store: "../Images/store.jpg";
+$countries: "../Images/countries.jpg";
+$sunny: "../Images/sunny.jpg";
+$portfolio: "../Images/portfolio.jpg";
 
 /******** BREAKPOINTS ***********/
 
@@ -77,20 +85,21 @@ $main-font: "Jost", sans-serif;
   position: relative;
 }
 
-section {
-  height: 100vh;
+.entire-page {
+  width: 100vw;
+  // overflow: hidden;
 }
 
-aside {
-  position: fixed;
-  width: 20%;
-  height: 100vh;
-  background-color: $white-color;
-}
+/**** TEXT ****/
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: $grey-color;
+}
+
+a:hover {
+  color: $primary-color;
+  text-decoration: none;
 }
 
 /*** HEADERS ***/
@@ -100,17 +109,24 @@ h1 {
   font-size: 2.25rem;
 }
 
-.entire-page {
-  width: 100%;
-  overflow: hidden;
-}
-
 /**** SIDEBAR ****/
+
+aside {
+  position: fixed;
+  min-width: 20vw;
+  height: 100vh;
+  background-color: $white-color;
+}
 
 .page-sideBar {
   box-shadow: 12px 0 15px -4px $shadow-color;
+  padding: 50px 0;
+
   ul {
     list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 60px 0;
 
     li {
       padding: 10px 0;
@@ -118,11 +134,30 @@ h1 {
   }
 }
 
+.side-nav {
+  margin: 0 auto;
+}
+
+.side-pic {
+  width: 145px;
+  height: 145px;
+  background-color: red;
+  border-radius: 80px;
+  background-image: url($sidePic);
+  border: solid 8px $secondary-color;
+  background-size: 280% auto;
+  background-position: -110px -220px;
+}
+
 /**** SECTIONS ****/
+
+// section {
+//   height: 100vh;
+// }
 
 .main-page {
   float: right;
-  width: 80%;
+  width: 80vw;
 }
 
 .section-pad {
@@ -130,30 +165,44 @@ h1 {
 }
 
 .container {
-  padding: 0 60px;
+  padding: 0 4vw;
+  width: 100%;
 }
 
 /**** HOME SECTION  ****/
 
 #home {
   background-color: $greyBG-color;
+  background-image: url($homePic);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
 }
 
 .about-img {
   background-color: $grey-color;
+  border: solid 10px $secondary-color;
 }
 
 /**** ABOUT SECTION  ****/
 
 #about {
   background-color: $white-color;
+  justify-content: center;
 }
 
 .about-img {
   background-color: $grey-color;
-  width: 350px;
+  width: 375px;
   height: 450px;
-  margin-left: 8%;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-image: url($displayPic);
+  background-size: 140% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-list {
@@ -192,30 +241,52 @@ h1 {
 
 #works {
   background-color: $secondary-color;
+  width: 100%;
 }
 
+.project-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 .project {
-  height: 400px;
+  width: 375px;
   margin: 20px 0;
+  height: 375px;
+  border: solid 1px $primary-color;
+}
+
+.overlay {
+  width: 100%;
+  display: none;
+  height: 100%;
+  background: $primary-overlay;
+  overflow: hidden;
+  z-index: 2;
 }
 
 #store {
-  background-color: red;
+  background-image: url($store);
+  background-size: cover;
 }
 #sunny {
-  background-color: green;
+  background-image: url($countries);
+  background-size: cover;
 }
 #countries {
-  background-color: yellow;
+  background-image: url($portfolio);
+  background-size: cover;
 }
 #portfolio {
-  background-color: blue;
+  background-image: url($sunny);
+  background-size: cover;
 }
 
 /**** CONTACT SECTION  ****/
 
 #contact {
   background-color: transparent;
+  height: 100vh;
 }
 
 .contact-list {

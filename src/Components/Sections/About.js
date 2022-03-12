@@ -11,7 +11,7 @@ import {
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
-import jquery from "../../Icons/jquery.svg";
+import jquery from "../../Images/jquery.svg";
 import {
   faCloudDownloadAlt,
   faFileArrowDown,
@@ -22,6 +22,7 @@ function About() {
     <section id="about" className="section-pad">
       <div className="container">
         <div className="row">
+          <div className="about-img col-md-5 .offset-md-1"></div>
           <div className="about-intro col-md-6">
             <h1>Roxan Estomata</h1>
             <p>
@@ -64,7 +65,6 @@ function About() {
               <FontAwesomeIcon icon={faFileArrowDown}></FontAwesomeIcon>
             </button>
           </div>
-          <div className="about-img col-md-5 .offset-md-1"></div>
         </div>
       </div>
     </section>

@@ -6,13 +6,23 @@ function Works() {
       <div className="container">
         <h1>WORKS</h1>
 
-        <div id="store" className="project col-md-3"></div>
+        <div className="project-container">
+          <div id="store" className="project">
+            <div className="overlay"></div>
+          </div>
 
-        <div id="countries" className="project col-md-3"></div>
+          <div id="countries" className="project">
+            <div className="overlay"></div>
+          </div>
 
-        <div id="sunny" className="project col-md-3"></div>
+          <div id="sunny" className="project">
+            <div className="overlay"></div>
+          </div>
 
-        <div id="portfolio" className="project col-md-3"></div>
+          <div id="portfolio" className="project">
+            <div className="overlay"></div>
+          </div>
+        </div>
       </div>
     </section>
   );
